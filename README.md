@@ -1,4 +1,4 @@
-# mdtest## Задачи по процессам
+## Задачи по процессам
 
 1. Опишите, что происходит, при выполнении любой команды в консоли, например:
     `$ ls -l` 
@@ -28,17 +28,26 @@
 
 3. Создайте процесс sleep с помощью 
 	    `$ sleep infinity &`
+
 	`root@deb2:/home/deployer# sleep infinity &`
     `[1] 1005`
+    
    - найдите его в списке процессов с помощью `ps`. 
+
     `root@deb2:/home/deployer# ps aux | grep sleep`
     `root       1005  0.0  0.0   5260   752 pts/0    S    14:00   0:00 sleep infinity`
     `root       1010  0.0  0.0   6076   892 pts/0    S+   14:00   0:00 grep sleep`
+
    - отфильтруйте вывод `ps` чтобы получить строку только с этим процессом.
+
     `root@deb2:/home/deployer# ps aux | grep sleep | grep -v "grep"`
     `root       1005  0.0  0.0   5260   752 pts/0    S    14:00   0:00 sleep infinity`
+
    - убейте процесс, отправив ему сигнал '-9' программой `kill`.
+
     `root@deb2:/home/deployer# ps aux | grep sleep | grep -v "grep" | awk '{print $2}' | xargs kill -9`
     `[1]+  Killed                  sleep infinity`
+
    - убедитесь, что процесса больше нет в списке выдачи `ps`.
+
     `root@deb2:/home/deployer# ps aux | grep sleep | grep -v "grep"`
