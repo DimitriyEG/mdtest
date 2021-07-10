@@ -51,3 +51,4 @@
    - убедитесь, что процесса больше нет в списке выдачи `ps`.  
 
     `root@deb2:/home/deployer# ps aux | grep sleep | grep -v "grep"`  
+    `root@deb2:/home/deployer#`
