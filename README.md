@@ -25,7 +25,4 @@ bash-5.0# exit
 exit  
 root@deb2:/home/deployer/isolate#  
 
-
-
-
 ```
